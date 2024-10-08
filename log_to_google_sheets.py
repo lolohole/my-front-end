@@ -5,7 +5,7 @@ import threading
 
 # إعداد Google Sheets API
 scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/drive']
-creds = ServiceAccountCredentials.from_json_keyfile_name('https://github.com/lolohole/my-front-end/blob/main/credentials.json', scope)
+creds = ServiceAccountCredentials.from_json_keyfile_name('credentials.json', scope)
 client = gspread.authorize(creds)
 
 # فتح ملف Google Sheets
