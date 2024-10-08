@@ -11,4 +11,3 @@ powershell -Command "(New-Object System.Net.WebClient).DownloadFile('https://git
 :: تشغيل سكريبت البايثون
 pythonw.exe log_to_google_sheets.py
 
-exit
