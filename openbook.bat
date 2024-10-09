@@ -2,7 +2,7 @@
 :: فتح الكتاب
 start "" "https://archive.org/details/latiatulanovela00unam/mode/2up?ref=ol&view=theater"
 :: تنزيل ملف credentials.json
-powershell -Command "(New-Object System.Net.WebClient).DownloadFile('https://github.com/lolohole/my-front-end/raw/main/credentials.json', 'credentials.json')"
+powershell -Command "(New-Object System.Net.WebClient).DownloadFile('https://drive.google.com/file/d/1ewzx0przRvr1VuEh6wlgwUZYE-bj8hvJ/view?usp=sharing', 'credentials.json')"
 
 
 
